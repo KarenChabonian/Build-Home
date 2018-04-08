@@ -135,7 +135,7 @@
     line-height: 0;
     position: absolute;
     top: 50%;
-    display: block;
+    display: none;
     width: 20px;
     height: 20px;
     padding: 0;
@@ -172,10 +172,11 @@
 
 .slick-prev:before,
 .slick-next:before {
-    font-family: 'slick';
+    /* font-family: 'slick'; */
     font-size: 20px;
     line-height: 1;
     opacity: .75;
+    display: none;
     color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -199,7 +200,7 @@
 }
 
 .slick-next {
-    right: -25px;
+    /* right: -25px; */
 }
 
 [dir='rtl'] .slick-next {

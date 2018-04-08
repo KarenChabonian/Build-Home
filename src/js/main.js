@@ -2,13 +2,28 @@
 
 'use strict'
 
+// nav scroll
+$(function() {
+    $(document).ready(function() {
+        $('.nav a').click(function(event) {
+            event.preventDefault();
+            var getHref = $(this).attr('href');
+            var jump = $(getHref).offset().top - 0;
+
+            $('html, body').animate({ scrollTop: jump }, 1000);
+
+        });
+    });
+});
+
+
 //top slick slider
 $(document).ready(function() {
     $('.center').slick({
         centerMode: true,
         centerPadding: '12.8%',
         infinite: true,
-        dots: true,
+        dots: false,
         slidesToShow: 1,
         slideToScroll: 1,
         responsive: [{
@@ -62,20 +77,6 @@ $(document).ready(function() {
                 }
             }
         ]
-    });
-});
-
-// nav scroll
-$(function() {
-    $(document).ready(function() {
-        $('.nav a').click(function(event) {
-            event.preventDefault();
-            var getHref = $(this).attr('href');
-            var jump = $(getHref).offset().top - 0;
-
-            $('html, body').animate({ scrollTop: jump }, 1000);
-
-        });
     });
 });
 

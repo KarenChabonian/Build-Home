@@ -11,7 +11,7 @@
     <!-- Mobile specific metas
         ============================================ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500,600" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
     <link rel="stylesheet" href="css/slick.min.css">
     <link rel="stylesheet" href='css/main.min.css'>
@@ -111,10 +111,11 @@
 
                     <li class="search__item search">
                         <a href="#" class="search__link">
-                            <img src="img/search.png" alt="#" class="search__icon">
+                            <i id="search" class="fas fa-search"></i>
                         </a>
                     </li>
                 </ul>
+
             </div>
         </div>
         <!-- ./navigations -->
@@ -438,57 +439,62 @@
                 <h2 class="features__title">Features Brands</h2>
                 <div class="button__wrap">
                     <div class="left__buttom buttom">
-                        <</div>
-                            <div class="right__buttom buttom">></div>
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+
+                    <div class="right__buttom buttom">
+                        <i class="fas fa-angle-right"></i>
                     </div>
                 </div>
-
-                <!-- brends-icon -->
-                <div class="features__wrapper">
-                    <ul class="brands__list">
-                        <li class="brands__item">
-                            <a href="#" class="brands__link">
-                                <img src="img/brand1.png" alt="#" class="brands__img">
-                            </a>
-                        </li>
-                        <li class="brands__item">
-                            <a href="#" class="brands__link">
-                                <img src="img/brand2.png" alt="#" class="brands__img">
-                            </a>
-                        </li>
-                        <li class="brands__item">
-                            <a href="#" class="brands__link">
-                                <img src="img/brand3.png" alt="#" class="brands__img">
-                            </a>
-                        </li>
-                        <li class="brands__item">
-                            <a href="#" class="brands__link">
-                                <img src="img/brand4.png" alt="#" class="brands__img">
-                            </a>
-                        </li>
-                        <li class="brands__item">
-                            <a href="#" class="brands__link">
-                                <img src="img/brand5.png" alt="#" class="brands__img">
-                            </a>
-                        </li>
-                        <li class="brands__item">
-                            <a href="#" class="brands__link">
-                                <img src="img/brand6.png" alt="#" class="brands__img">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- ./brends-icon -->
             </div>
+
+            <!-- brends-icon -->
+            <div class="features__wrapper">
+                <ul class="brands__list">
+                    <li class="brands__item">
+                        <a href="#" class="brands__link">
+                            <img src="img/brand1.png" alt="#" class="brands__img">
+                        </a>
+                    </li>
+                    <li class="brands__item">
+                        <a href="#" class="brands__link">
+                            <img src="img/brand2.png" alt="#" class="brands__img">
+                        </a>
+                    </li>
+                    <li class="brands__item">
+                        <a href="#" class="brands__link">
+                            <img src="img/brand3.png" alt="#" class="brands__img">
+                        </a>
+                    </li>
+                    <li class="brands__item">
+                        <a href="#" class="brands__link">
+                            <img src="img/brand4.png" alt="#" class="brands__img">
+                        </a>
+                    </li>
+                    <li class="brands__item">
+                        <a href="#" class="brands__link">
+                            <img src="img/brand5.png" alt="#" class="brands__img">
+                        </a>
+                    </li>
+                    <li class="brands__item">
+                        <a href="#" class="brands__link">
+                            <img src="img/brand6.png" alt="#" class="brands__img">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- ./brends-icon -->
+        </div>
     </section>
     <!-- ./features-section -->
-
-
 
     </maine>
     <!-- ./maine -->
 
+
+    <!-- footer -->
     <footer class="footer">
+        <!-- footer-container -->
         <div class="footer__container">
             <nav class="footer__nav">
                 <div class="footer__logo-wrap">
@@ -535,10 +541,115 @@
                     </ul>
                 </div>
 
-                <div class="footer__search"></div>
+                <!-- search -->
+                <form class="footer__form">
+                    <div class="footer__search">
+                        <input type="search" name="q" placeholder="Search..." class="search">
+                        <div class="search__icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </form>
+                <!-- ./search -->
             </nav>
+
+            <!-- footer-elements -->
+            <div class="footer__elements">
+                <ul class="footer__list">social
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Facebook</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Flickr</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Twitter</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Vimeo</a>
+                    </li>
+                </ul>
+
+                <ul class="footer__list">link
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">How to Write a Blog</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Creare a Blog in 4 Steps</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">15 Tips to Icrease Traffic</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">20 Blog Post Ideas</a>
+                    </li>
+                </ul>
+
+                <ul class="footer__list">blogroll
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Blogs Blog</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Roll Up Roll Up</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Blogg Free</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Wordpress Blog</a>
+                    </li>
+                </ul>
+
+                <ul class="footer__list">about us
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Agriculture</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Harvest</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Company news</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__item-link">Inwestor relations</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <!-- ./footer-container -->
+
+        <!-- footer-bottom -->
+        <div class="footer-bottom">
+            <div class="footer__bottom-container">
+                <div class="contacts__address-wrap">
+                    <address class="address">
+                        <ul class="address__link-list"> 
+                            <li class="address__link-item">
+                                    <i id="footer__icon" class="fas fa-map-marker-alt"></i>
+                                <a href="#some-map" class="address__link">BuildHomeLtd. Street Name 123  23 45 Cityname</a>
+                            </li>
+                            <li class="address__link-item">
+                                    <i id="footer__icon" class="fas fa-mobile-alt"></i>
+                                <a href="tel:+123900123456" class="address__link">+123 900 123 456</a>
+                            </li>
+                            <li class="address__link-item">
+                                    <i id="footer__icon" class="fas fa-id-card"></i>
+                                <a href="mailto:info@buildhome.web" class="address__link">info@buildhome.web</a>
+                            </li>
+                        </ul>
+                   </address>
+                    <!-- copyright -->
+                    <div class="coryright__wrap">
+                        <span class="copyright">© 2014 Build Home</span>
+                    </div>
+                    <!-- ./copyright -->
+                </div>
+            </div>
+        </div>
+        <!-- ./footer-bottom -->
+
     </footer>
+    <!-- ./footer -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js"></script>
