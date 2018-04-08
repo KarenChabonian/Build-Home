@@ -23,7 +23,7 @@ $(document).ready(function() {
         centerMode: true,
         centerPadding: '12.8%',
         infinite: true,
-        dots: false,
+        dots: true,
         slidesToShow: 1,
         slideToScroll: 1,
         responsive: [{

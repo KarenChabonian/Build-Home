@@ -747,17 +747,23 @@ ul li {
     }
     .slick-prev,
     .slick-next {
-        position: absolute;
         top: 35%;
         left: 5%;
-        width: 45px;
-        height: 40px;
         z-index: 2;
-        background: #000;
-        opacity: .6;
+        opacity: .7;
     }
     .slick-next {
         left: 90%;
+        border: 40px solid transparent;
+        width: 0px;
+        height: 0px;
+        border-left-color: #000;
+    }
+    .slick-prev {
+        border: 40px solid transparent;
+        width: 0px;
+        height: 0px;
+        border-right-color: #000;
     }
 }
 
