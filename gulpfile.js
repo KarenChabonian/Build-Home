@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
     watch = require('gulp-watch'),
     sass = require('gulp-sass'),
-    autopref = require('gulp-autoprefixer'),
+    autoprefixer = require('gulp-autoprefixer'),
     csso = require('gulp-csso'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
@@ -10,10 +10,10 @@ const gulp = require('gulp'),
 
 
 gulp.task('css', function() {
-    return gulp.src('src/**/*.+(scss|sass)')
+    return gulp.src('src/sass/**/*.+(scss|sass)')
         .pipe(plumber())
         .pipe(sass())
-        .pipe(autopref(['last 15 versions', '> 1%', 'ie 8', 'ie 9', 'ie 10', 'ie 11'], { cascade: true }))
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 9', 'ie 10', 'ie 11'], { cascade: true }))
         .pipe(csso())
         .pipe(rename({
             suffix: '.min',

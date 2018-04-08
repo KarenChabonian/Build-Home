@@ -6,9 +6,8 @@
 $(function() {
     $(document).ready(function() {
         $('.nav a').click(function(event) {
-            event.preventDefault();
             var getHref = $(this).attr('href');
-            var jump = $(getHref).offset().top - 0;
+            var jump = $(getHref).offset().top - -1;
 
             $('html, body').animate({ scrollTop: jump }, 1000);
 
