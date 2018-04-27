@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
     watch = require('gulp-watch'),
     sass = require('gulp-sass'),
-    autopref = require('gulp-autoprefixer'),
+    autoprefixer = require('gulp-autoprefixer'),
     csso = require('gulp-csso'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
@@ -13,14 +13,20 @@ gulp.task('css', function() {
     return gulp.src('src/**/*.+(scss|sass)')
         .pipe(plumber())
         .pipe(sass())
-        .pipe(autopref(['last 15 versions', '> 1%', 'ie 8', 'ie 9', 'ie 10', 'ie 11'], { cascade: true }))
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 9', 'ie 10', 'ie 11'], { cascade: true }))
         .pipe(csso())
         .pipe(rename({
             suffix: '.min',
             extname: '.css'
         }))
         .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({ stream: true }))
+        .pipe(browserSync.reload({ stream: true }));
+});
+
+gulp.task('sass', function() {
+    return gulp.src('src/sass/**/*.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('js', function() {
@@ -31,7 +37,7 @@ gulp.task('js', function() {
             suffix: '.min'
         }))
         .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.reload({ stream: true }))
+        .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('slick-css', function() {
@@ -67,7 +73,8 @@ gulp.task('browser-sync', function() {
 });
 
 
-gulp.task('watch', ['browser-sync', 'css', 'js'], function() {
+gulp.task('watch', ['browser-sync', 'css', 'sass', 'js'], function() {
+    gulp.watch('src/sass/**/*.scss', ['sass']);
     gulp.watch('src/**/*.scss', ['css']);
     gulp.watch('src/**/*.js', ['js']);
     gulp.watch('dist/**/*.js', browserSync.reload);

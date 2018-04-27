@@ -1,12 +1,9 @@
 ;
 
-'use strict'
-
 // nav scroll
 $(function() {
     $(document).ready(function() {
         $('.nav a').click(function(event) {
-            event.preventDefault();
             var getHref = $(this).attr('href');
             var jump = $(getHref).offset().top - 0;
 
