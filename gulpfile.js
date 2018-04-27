@@ -10,7 +10,7 @@ const gulp = require('gulp'),
 
 
 gulp.task('css', function() {
-    return gulp.src('src/**/*.+(scss|sass)')
+    return gulp.src('src/sass/**/*.+(scss|sass)')
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 9', 'ie 10', 'ie 11'], { cascade: true }))
