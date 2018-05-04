@@ -1,17 +1,48 @@
 ;
 
-// nav scroll
-$(function() {
-    $(document).ready(function() {
-        $('.nav a').click(function(event) {
-            var getHref = $(this).attr('href');
-            var jump = $(getHref).offset().top - -1;
+//header fixed
+var navElem = document.getElementById('nav');
+var navSourceBottom = navElem.getBoundingClientRect().bottom + window.pageYOffset;
 
-            $('html, body').animate({ scrollTop: jump }, 1000);
+window.onscroll = function() {
+    if (navElem.classList.contains('nav__fixed') && window.pageYOffset < navSourceBottom) {
+        navElem.classList.remove('nav__fixed');
+    } else if (window.pageYOffset > navSourceBottom) {
+        navElem.classList.add('nav__fixed');
+    }
+};
 
-        });
-    });
-});
+
+// animate({
+//     duration: 2000,
+//     timing: makeEaseOut(bounce),
+//     draw: function(progress) {
+//       ball.style.top = height * progress + 'px'
+//     }
+//   });
+
+//nav scroll
+var navLink = document.querySelectorAll('.nav a'),
+    V = 0.7;
+
+for (var i = 0; i < navLink.length; i++) {
+    navLink[i].onclick = function() {
+        var w = window.pageYOffset,
+            hash = this.href.replace(/[^#]*(.*)/, '$1');
+        t = document.querySelector(hash).getBoundingClientRect().top,
+            start = null;
+        requestAnimationFrame(step);
+
+        function step(time) {
+            if (start === null) start = time;
+            var progress = time - start,
+                r = (t < 0 ? Math.max(w - progress / V, w + t) : Math.min(w + progress / V, w + t));
+            window.scrollTo(0, r);
+            if (r != w + t) { requestAnimationFrame(step) } else { location.hash = hash }
+        }
+        return false;
+    }
+}
 
 
 //top slick slider
@@ -48,12 +79,13 @@ $(document).ready(function() {
 //services slick slider
 $(document).ready(function() {
     $('.services__slider').slick({
+        centerMode: true,
         infinite: true,
         arrows: true,
         autoplay: true,
         autoplaySpeed: 3000,
-        slidesToShow: 6,
-        slideToScroll: 4,
+        slidesToShow: 5,
+        slideToScroll: 1,
 
         responsive: [{
                 breakpoint: 768,
@@ -76,27 +108,3 @@ $(document).ready(function() {
         ]
     });
 });
-
-
-
-
-
-
-// //header scroll
-// $(document).scroll(function() {
-
-//     if (($(document).scrollTop() > 530)) {
-//         $('.header').addClass('header-scroll');
-
-//         if (($(document).scrollTop() > 1100)) {
-//             $('.header').removeClass('header-scroll');
-//             $('.header').addClass('header-hidden');
-//         } else {
-//             $('.header').removeClass('header-hidden');
-//         }
-//         return;
-//     }
-
-//     $('.header').removeClass('header-scroll');
-
-// });

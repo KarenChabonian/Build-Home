@@ -10,7 +10,7 @@ const gulp = require('gulp'),
 
 
 gulp.task('css', function() {
-    return gulp.src('src/sass/**/*.+(scss|sass)')
+    return gulp.src('src/**/*.+(scss|sass)')
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 9', 'ie 10', 'ie 11'], { cascade: true }))
@@ -23,11 +23,6 @@ gulp.task('css', function() {
         .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('sass', function() {
-    return gulp.src('src/sass/**/*.scss')
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest('dist/css'));
-});
 
 gulp.task('js', function() {
     return gulp.src('src/js/main.js')
@@ -73,8 +68,7 @@ gulp.task('browser-sync', function() {
 });
 
 
-gulp.task('watch', ['browser-sync', 'css', 'sass', 'js'], function() {
-    gulp.watch('src/sass/**/*.scss', ['sass']);
+gulp.task('watch', ['browser-sync', 'css', 'js'], function() {
     gulp.watch('src/**/*.scss', ['css']);
     gulp.watch('src/**/*.js', ['js']);
     gulp.watch('dist/**/*.js', browserSync.reload);
