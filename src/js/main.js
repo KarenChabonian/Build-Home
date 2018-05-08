@@ -1,5 +1,3 @@
-;
-
 //header fixed
 var navElem = document.getElementById('nav');
 var navSourceBottom = navElem.getBoundingClientRect().bottom + window.pageYOffset;
@@ -12,14 +10,6 @@ window.onscroll = function() {
     }
 };
 
-
-// animate({
-//     duration: 2000,
-//     timing: makeEaseOut(bounce),
-//     draw: function(progress) {
-//       ball.style.top = height * progress + 'px'
-//     }
-//   });
 
 //nav scroll
 var navLink = document.querySelectorAll('.nav a'),
@@ -75,6 +65,7 @@ $(document).ready(function() {
         ]
     });
 });
+
 
 //services slick slider
 $(document).ready(function() {
